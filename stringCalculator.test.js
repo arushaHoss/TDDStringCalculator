@@ -27,3 +27,7 @@ test('Should handle different delimeters', () => {
 test('Should throw an exception for negative numbers', () => {
     expect(add("1,-2,3,-4")).toBe("Negative numbers not allowed: -2,-4")
 })
+
+test('Should ignore numbers greater than 1000', () => {
+    expect(add("2,1001")).toBe(2)
+})

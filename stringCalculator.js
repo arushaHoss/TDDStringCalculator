@@ -17,8 +17,9 @@ function add(numbers) {
                 return `Negative numbers not allowed: ${negatives.join(',')}`;
             }
 
+            const validNumbers = numArray.filter(num => parseInt(num) <= 1000);
             let sum = 0;
-            for (let num of numArray) {
+            for (let num of validNumbers) {
                 sum += parseInt(num)
             }
             return sum;
