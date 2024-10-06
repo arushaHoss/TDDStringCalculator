@@ -2,8 +2,13 @@ function add(numbers) {
     if (numbers == "") {
         return 0;
     }
-    else if(numbers.length == 1){
-        return parseInt(numbers); 
+    else{
+        const numArray = numbers.split(',');
+        let sum = 0;
+        for(let num of numArray){
+            sum += parseInt(num)
+        }
+        return sum; 
     }
     
 }
