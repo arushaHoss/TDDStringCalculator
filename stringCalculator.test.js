@@ -34,5 +34,8 @@ test('Should ignore numbers greater than 1000', () => {
 
 test('Should handle delimeter of any length', () => {
     expect(add("//[***]\n1***2***3")).toBe(6)
-})
+});
 
+test('Should handle multiple delimeters', () => {
+    expect(add("//[*][%]\n1*2%3")).toBe(6)
+});
