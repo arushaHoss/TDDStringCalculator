@@ -8,13 +8,16 @@ function add(numbers) {
             if (numbers.startsWith("//")) {
                 const parts = numbers.split("\n");
                 let customDelimeter = parts[0].slice(2); // Extract custom delimiter
-                if(customDelimeter.startsWith("[") && customDelimeter.endsWith("]")){
-                    customDelimeter = customDelimeter.replace(/[\[\]']+/g,''); // Remove square brackets
+
+                if (customDelimeter.startsWith("[") && customDelimeter.endsWith("]")) {
+                    customDelimeter = customDelimeter.replace(/[\[\]']+/g, ''); // Remove square brackets
                     customDelimeter += "+"; // Add the plus sign at the end
                 }
+
                 delimeter = new RegExp(`[${customDelimeter}]`);
                 numbers = parts[1]
             }
+
             const numArray = numbers.split(delimeter); //Split by comma or new line
             const negatives = numArray.filter(num => parseInt(num) < 0);
 
